@@ -26,21 +26,18 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    borderColor: "red",
-    borderWidth: 1,
   },
   imagem: {
-    height: 390,
+    height: 350,
     justifyContent: "center",
   },
   textGerencie:{
     fontSize: 32,
-    top: 1,
-    padding: 15,
   },
   textRegar: {
 
   },
   buttonOpacity: {
+    
   }
 });
