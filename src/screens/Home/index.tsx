@@ -1,8 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { images } from './images';
+import { images } from '../../../images';
+import { useNavigation } from '@react-navigation/native';
 
-export default function App() {
+
+export default function Home() {
+  const navigation = useNavigation<any>()
+
   return (
     <View style={styles.container}>
     <StatusBar style="auto" />
@@ -13,7 +17,7 @@ export default function App() {
       <Text style={styles.textRegar}>
       Não esqueça mais de regar suas plantas. Nós cuidamos de lembrar você sempre que precisar.
       </Text>
-      <TouchableOpacity style={styles.buttonOpacity}>
+      <TouchableOpacity style={styles.buttonOpacity} onPress={() => navigation.navigate("EscolhaPlanta")}>
         <Image source={images.Avançaer}/>
       </TouchableOpacity>
     </View>
