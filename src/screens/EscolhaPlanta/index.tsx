@@ -53,7 +53,45 @@ export default function EscolhaPlanta() {
               Sala
             </Text>
           </View>
-        </ScrollView> 
+        </ScrollView>
+        <ScrollView>
+          <View>
+            <Image source={images.imbe}/>
+            <Text>
+              Imbé
+            </Text>
+          </View>
+          <View>
+            <Image source={images.peperomia}/>
+            <Text>
+              Peperomia
+            </Text>
+          </View>
+          <View>
+            <Image source={images.aningapara}/>
+            <Text>
+              Aningapara
+            </Text>
+          </View>
+          <View>
+            <Image source={images.yucca}/>
+            <Text>
+              Yucca
+            </Text>
+          </View>
+          <View>
+            <Image source={images.espada}/>
+            <Text>
+              Espada de São Jorge
+            </Text>
+          </View>
+          <View>
+            <Image source={images.zamioculca}/>
+            <Text>
+              Zamioculca
+            </Text>
+          </View>
+        </ScrollView>
     </View>
   );
 }
@@ -95,11 +133,17 @@ const styles = StyleSheet.create({
     borderWidth:1,
     flexDirection:'row',
     paddingHorizontal: 20,
-    height: 200
+    height: 35,
   },
   sala: {
-    marginHorizontal: 20,
+    marginHorizontal: 2,
     borderWidth: 1,
+    width: 76,
+    height: 40,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#F5FAF7',
+    borderRadius: 10,
   }
   
 });

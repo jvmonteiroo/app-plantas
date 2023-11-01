@@ -2,4 +2,10 @@ export const images = {
     ilustra:require("./src/images/ilustra.png"),
     Avançaer:require("./src/images/Avançaer.png"),
     foto:require("./src/images/foto.png"),
+    aningapara:require("./src/images/aningapara.png"),
+    espada:require("./src/images/espada.png"),
+    imbe:require("./src/images/imbe.png"),
+    peperomia:require("./src/images/peperomia.png"),
+    yucca:require("./src/images/yucca.png"),
+    zamioculca:require("./src/images/zamioculca.png"),
 }
