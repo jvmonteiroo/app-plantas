@@ -54,42 +54,46 @@ export default function EscolhaPlanta() {
             </Text>
           </View>
         </ScrollView>
-        <ScrollView>
-          <View>
-            <Image source={images.imbe}/>
-            <Text>
-              Imbé
-            </Text>
+        <ScrollView style={styles.plantas}>
+          <View style={styles.caixa3}>
+            <View>
+              <Image source={images.imbe} style={styles.planta} resizeMode='contain' resizeMethod='resize'/>
+              <Text>
+                Imbé
+              </Text>
+            </View>
+            <View>
+              <Image source={images.peperomia} style={styles.planta} resizeMode='contain' resizeMethod='resize'/>
+              <Text>
+                Peperomia
+              </Text>
+            </View>
+            <View>
+              <Image source={images.aningapara} style={styles.planta} resizeMode='contain' resizeMethod='resize'/>
+              <Text>
+                Aningapara
+              </Text>
+            </View>
           </View>
-          <View>
-            <Image source={images.peperomia}/>
-            <Text>
-              Peperomia
-            </Text>
-          </View>
-          <View>
-            <Image source={images.aningapara}/>
-            <Text>
-              Aningapara
-            </Text>
-          </View>
-          <View>
-            <Image source={images.yucca}/>
-            <Text>
-              Yucca
-            </Text>
-          </View>
-          <View>
-            <Image source={images.espada}/>
-            <Text>
-              Espada de São Jorge
-            </Text>
-          </View>
-          <View>
-            <Image source={images.zamioculca}/>
-            <Text>
-              Zamioculca
-            </Text>
+          <View style={styles.caixa3}>
+            <View>
+              <Image source={images.yucca} style={styles.planta} resizeMode='contain' resizeMethod='resize'/>
+              <Text>
+                Yucca
+              </Text>
+            </View>
+            <View>
+              <Image source={images.espada} style={styles.planta} resizeMode='contain' resizeMethod='resize'/>
+              <Text>
+                Espada de São Jorge
+              </Text>
+            </View>
+            <View>
+              <Image source={images.zamioculca} style={styles.planta} resizeMode='contain' resizeMethod='resize'/>
+              <Text>
+                Zamioculca
+              </Text>
+            </View>
           </View>
         </ScrollView>
     </View>
@@ -144,6 +148,25 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#F5FAF7',
     borderRadius: 10,
-  }
+  },
+  plantas: {
+    borderWidth:1,
+    marginHorizontal: 25,
+    flexDirection: 'row',
+    columnCount:2,
+    height: 350,
+
+  },
+  caixa3: {
+    borderWidth:1,
+    width:148,
+    height: 100,
+  },
+  planta: {
+    borderWidth:1,
+    width:148,
+    height:154,
+  },
+
   
 });
