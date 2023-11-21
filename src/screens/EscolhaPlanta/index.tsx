@@ -1,8 +1,42 @@
 import { StatusBar } from 'expo-status-bar';
-import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View, FlatList } from 'react-native';
 import { images } from '../../../images';
 
+type ItemProps={
+  image:string,
+  name:string,
+}
+
 export default function EscolhaPlanta() {
+
+  const plantas = [
+    {
+      name: "Imbé",
+      image:"imbe",
+    },
+    {
+      name: "Peperomia",
+      image: "peperomia",
+    },
+    {
+      name: "Espada de São Jorge",
+      image: "espada",
+    },
+    {
+      name: "Yucca",
+      image:"yucca",
+    },
+    
+  ]
+  const Item = ({name, image}: ItemProps) => (
+    <View style={styles.boxPlanta}>
+      <Image source={images[image]} style={styles.planta} resizeMode='contain' resizeMethod='resize'/>
+      <Text style={styles.textPlantas}>
+        {name}
+      </Text>
+    </View>
+  )
+
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
@@ -54,44 +88,18 @@ export default function EscolhaPlanta() {
             </Text>
           </View>
         </ScrollView>
-        <ScrollView style={styles.plantas}>
-            <View style={styles.boxPlanta}>
-              <Image source={images.imbe} style={styles.planta} resizeMode='contain' resizeMethod='resize'/>
-              <Text style={styles.textPlantas}>
-                Imbé
-              </Text>
-            </View>
-            <View style={styles.boxPlanta}>
-              <Image source={images.peperomia} style={styles.planta} resizeMode='contain' resizeMethod='resize'/>
-              <Text style={styles.textPlantas}>
-                Peperomia
-              </Text>
-            </View>
-            <View style={styles.boxPlanta}>
-              <Image source={images.aningapara} style={styles.planta} resizeMode='contain' resizeMethod='resize'/>
-              <Text style={styles.textPlantas}>
-                Aningapara
-              </Text>
-          </View>
-            <View style={styles.boxPlanta}>
-              <Image source={images.yucca} style={styles.planta} resizeMode='contain' resizeMethod='resize'/>
-              <Text style={styles.textPlantas}>
-                Yucca
-              </Text>
-            </View>
-            <View style={styles.boxPlanta}>
-              <Image source={images.espada} style={styles.planta} resizeMode='contain' resizeMethod='resize'/>
-              <Text style={styles.textPlantas}>
-                Espada de São Jorge
-              </Text>
-            </View>
-            <View style={styles.boxPlanta}>
-              <Image source={images.zamioculca} style={styles.planta} resizeMode='contain' resizeMethod='resize'/>
-              <Text style={styles.textPlantas}>
-                Zamioculca
-              </Text>
-            </View>
-        </ScrollView>
+        <FlatList 
+          style={styles.plantas} 
+          data={plantas} 
+          renderItem={({item}:any) => <Item name={item.name} image={item.image}/>}
+          numColumns={2}
+          horizontal={false}
+          contentContainerStyle={{
+            flex:1,
+            gap:10,
+          }}
+          columnWrapperStyle={{gap:10}}
+          />
     </View>
   );
 }
@@ -150,7 +158,7 @@ const styles = StyleSheet.create({
     height: 550,
   },
   boxPlanta: {
-    width:148,
+    width:"50%",
     height:154,
     alignItems:'center',
     justifyContent:'center',
