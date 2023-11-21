@@ -55,46 +55,42 @@ export default function EscolhaPlanta() {
           </View>
         </ScrollView>
         <ScrollView style={styles.plantas}>
-          <View style={styles.caixa3}>
-            <View>
+            <View style={styles.boxPlanta}>
               <Image source={images.imbe} style={styles.planta} resizeMode='contain' resizeMethod='resize'/>
-              <Text>
+              <Text style={styles.textPlantas}>
                 Imbé
               </Text>
             </View>
-            <View>
+            <View style={styles.boxPlanta}>
               <Image source={images.peperomia} style={styles.planta} resizeMode='contain' resizeMethod='resize'/>
-              <Text>
+              <Text style={styles.textPlantas}>
                 Peperomia
               </Text>
             </View>
-            <View>
+            <View style={styles.boxPlanta}>
               <Image source={images.aningapara} style={styles.planta} resizeMode='contain' resizeMethod='resize'/>
-              <Text>
+              <Text style={styles.textPlantas}>
                 Aningapara
               </Text>
-            </View>
           </View>
-          <View style={styles.caixa3}>
-            <View>
+            <View style={styles.boxPlanta}>
               <Image source={images.yucca} style={styles.planta} resizeMode='contain' resizeMethod='resize'/>
-              <Text>
+              <Text style={styles.textPlantas}>
                 Yucca
               </Text>
             </View>
-            <View>
+            <View style={styles.boxPlanta}>
               <Image source={images.espada} style={styles.planta} resizeMode='contain' resizeMethod='resize'/>
-              <Text>
+              <Text style={styles.textPlantas}>
                 Espada de São Jorge
               </Text>
             </View>
-            <View>
+            <View style={styles.boxPlanta}>
               <Image source={images.zamioculca} style={styles.planta} resizeMode='contain' resizeMethod='resize'/>
-              <Text>
+              <Text style={styles.textPlantas}>
                 Zamioculca
               </Text>
             </View>
-          </View>
         </ScrollView>
     </View>
   );
@@ -134,7 +130,6 @@ const styles = StyleSheet.create({
     fontWeight:'400'
   },
   comodos: {
-    borderWidth:1,
     flexDirection:'row',
     paddingHorizontal: 20,
     height: 35,
@@ -150,23 +145,25 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   plantas: {
-    borderWidth:1,
     marginHorizontal: 25,
     flexDirection: 'row',
-    columnCount:2,
-    height: 350,
-
+    height: 550,
   },
-  caixa3: {
-    borderWidth:1,
-    width:148,
-    height: 100,
-  },
-  planta: {
-    borderWidth:1,
+  boxPlanta: {
     width:148,
     height:154,
+    alignItems:'center',
+    justifyContent:'center',
+    borderRadius:20,
+    backgroundColor:"#F5FAF7",
   },
+    planta: {
+      width:50,
+      height:88,
+  },
+  textPlantas: {
+    
+  }
 
   
 });
