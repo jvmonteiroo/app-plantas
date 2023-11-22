@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View, FlatList } from 'react-native';
 import { images } from '../../../images';
+import { useNavigation } from '@react-navigation/native';
 
 type ItemProps={
   image:string,
@@ -8,6 +9,8 @@ type ItemProps={
 }
 
 export default function EscolhaPlanta() {
+
+  const navigation = useNavigation<any>()
 
   const plantas = [
     {
@@ -19,22 +22,30 @@ export default function EscolhaPlanta() {
       image: "peperomia",
     },
     {
-      name: "Espada de São Jorge",
-      image: "espada",
+      name: "Aningapara",
+      image: "aningapara",
     },
     {
       name: "Yucca",
       image:"yucca",
     },
+    {
+      name: "Espada de São Jorge",
+      image: "espada",
+    },
+    {
+      name: "Zamioculca",
+      image: "zamioculca",
+    },
     
   ]
   const Item = ({name, image}: ItemProps) => (
-    <View style={styles.boxPlanta}>
+    <TouchableOpacity style={styles.boxPlanta} onPress={() => navigation.navigate("imbe")}>
       <Image source={images[image]} style={styles.planta} resizeMode='contain' resizeMethod='resize'/>
       <Text style={styles.textPlantas}>
         {name}
       </Text>
-    </View>
+    </TouchableOpacity>
   )
 
   return (
