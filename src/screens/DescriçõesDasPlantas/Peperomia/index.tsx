@@ -15,7 +15,7 @@ export default function Peperomia() {
                 </TouchableOpacity>
             </View>
             <View style={styles.headerDescription}>
-                <Image source={images.Peperomia} resizeMode='contain' resizeMethod='resize' style={styles.headerDescriptionImage}/>
+                <Image source={images.peperomia} resizeMode='contain' resizeMethod='resize' style={styles.headerDescriptionImage}/>
                 <Text style={styles.textHeaderDescriptionPeperomia}>
                     Pereromia
                 </Text>
@@ -39,6 +39,9 @@ const styles=StyleSheet.create({
         borderWidth:1,
         borderColor:"red",
         height:100,
+        position:"absolute",
+        width:100,
+        top:40,
     },
     touchableButtonBack: {
 
@@ -53,12 +56,13 @@ const styles=StyleSheet.create({
         borderWidth:1,
         borderColor:"red",
         height:50,
+        top:100,
     },
     headerDescriptionImage: {
         
     },
     textHeaderDescriptionPeperomia: {
-        
+
     }
     
 })

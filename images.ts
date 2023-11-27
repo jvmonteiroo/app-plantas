@@ -8,4 +8,5 @@ export const images:any = {
     peperomia:require("./src/images/peperomia.png"),
     yucca:require("./src/images/yucca.png"),
     zamioculca:require("./src/images/zamioculca.png"),
+    Arrow:require("./src/images/Arrow.png"),
 }
