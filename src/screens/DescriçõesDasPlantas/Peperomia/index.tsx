@@ -10,12 +10,21 @@ export default function Peperomia() {
     return (
         <View style={styles.container}>
             <View style={styles.buttonBack}>
-                <TouchableOpacity>
-                    <Image source={images.Arrow} resizeMode='contain' resizeMethod='resize' style={styles.image}/>
+                <TouchableOpacity style={styles.touchableButtonBack}>
+                    <Image source={images.Arrow} resizeMode='contain' resizeMethod='resize' style={styles.imageButtonBack}/>
                 </TouchableOpacity>
             </View>
             <View style={styles.headerDescription}>
-
+                <Image source={images.Peperomia} resizeMode='contain' resizeMethod='resize' style={styles.headerDescriptionImage}/>
+                <Text style={styles.textHeaderDescriptionPeperomia}>
+                    Pereromia
+                </Text>
+                <Text>
+                    Não pode pegar sol e devve ficar em
+                </Text>
+                <Text>
+                    temperatura ambiente, dentro de casa.
+                </Text>
             </View>
         </View>
     )
@@ -31,14 +40,25 @@ const styles=StyleSheet.create({
         borderColor:"red",
         height:100,
     },
-    image: {
+    touchableButtonBack: {
+
+    },
+    imageButtonBack: {
         borderWidth:1,
         borderColor:"red",
         height:50,
         width:"100%"
     },
     headerDescription: {
-
+        borderWidth:1,
+        borderColor:"red",
+        height:50,
     },
+    headerDescriptionImage: {
+        
+    },
+    textHeaderDescriptionPeperomia: {
+        
+    }
     
 })
