@@ -9,4 +9,5 @@ export const images:any = {
     yucca:require("./src/images/yucca.png"),
     zamioculca:require("./src/images/zamioculca.png"),
     Arrow:require("./src/images/Arrow.png"),
+    emoji:require("./src/images/emoji.png"),
 }
