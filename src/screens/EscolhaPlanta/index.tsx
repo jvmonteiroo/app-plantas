@@ -40,7 +40,7 @@ export default function EscolhaPlanta() {
     
   ]
   const Item = ({name, image}: ItemProps) => (
-    <TouchableOpacity style={styles.boxPlanta} onPress={() => navigation.navigate("Peperomia")}>
+    <TouchableOpacity style={styles.boxPlanta} onPress={() => navigation.navigate("Peperomia", {name, image})}>
       <Image source={images[image]} style={styles.planta} resizeMode='contain' resizeMethod='resize'/>
       <Text style={styles.textPlantas}>
         {name}

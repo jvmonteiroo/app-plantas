@@ -20,7 +20,7 @@ export default function Peperomia() {
                     Pereromia
                 </Text>
                 <Text>
-                    Não pode pegar sol e devve ficar em
+                    Não pode pegar sol e deve ficar em
                 </Text>
                 <Text>
                     temperatura ambiente, dentro de casa.
