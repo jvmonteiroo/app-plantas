@@ -10,7 +10,7 @@ export default function Peperomia() {
     return (
         <View style={styles.container}>
             <View style={styles.buttonBack}>
-                <TouchableOpacity style={styles.touchableButtonBack}>
+                <TouchableOpacity onPress={() => navigation.navigate("EscolhaPlanta")} style={styles.touchableButtonBack}>
                     <Image source={images.Arrow} resizeMode='contain' resizeMethod='resize' style={styles.imageButtonBack}/>
                 </TouchableOpacity>
             </View>
@@ -27,7 +27,6 @@ export default function Peperomia() {
                 </Text>
             </View>
             <View style={styles.wateringRectanglePlant}>
-                <View style={styles.wateringRectanglePlantImageText}>
                     <Image source={images.emoji} style={styles.imageEmoji} resizeMode='contain' resizeMethod='resize'/>
                     <View>    
                         <Text>
@@ -37,8 +36,18 @@ export default function Peperomia() {
                             400ml a cada dois dias
                         </Text>
                     </View>
-                </View>
             </View>
+            <View style={styles.clock}>
+                <Text style={styles.textClock}>
+                Ecolha o melhor horário para ser lembrado:
+                </Text>
+                <Image source={images.relogio}/>
+            </View>
+            <TouchableOpacity style={styles.buttonGreen}>
+                <Text style={styles.buttonGreenText}>
+                    Cadastrar Planta
+                </Text>
+            </TouchableOpacity>
         </View>
     )
 }
@@ -49,8 +58,6 @@ const styles=StyleSheet.create({
         paddingTop:20,
     },
     buttonBack: {
-        borderWidth:1,
-        borderColor:"red",
         height:100,
         position:"absolute",
         width:75,
@@ -64,10 +71,8 @@ const styles=StyleSheet.create({
         width:"100%"
     },
     headerDescription: {
-        borderWidth:1,
-        borderColor:"red",
         height:280,
-        top:100,
+        top:120,
         justifyContent:"center",
         alignItems:"center"
     },
@@ -86,25 +91,44 @@ const styles=StyleSheet.create({
         fontWeight: "400",
     },
     wateringRectanglePlant: {
-        borderWidth:1,
-        borderColor:"red",
         width: 311,
         height: 88,
-        top: 110,
+        top: 150,
         left:50,
         backgroundColor: "#E6F1FA",
         borderRadius: 20,
-    },
-    wateringRectanglePlantImageText: {
         flexDirection: "row",
-        justifyContent: "center",
-        alignItems: "center",
+        justifyContent:"space-between",
+        alignItems:"center",
+        padding:25,
     },
     imageEmoji:{
         backgroundColor: "#D6EDFF",
-        width:56,
-        height:56,
-        borderRadius:46,
+        width:66,
+        height:66,
+        borderRadius:30,
+    },
+    clock: {
+        width:"100%",
+        top:180,
+        justifyContent:"space-between",
+        alignItems:"center",
+    },
+    textClock: {
+        fontWeight:"400",
+    },
+    buttonGreen: {
+        top:250,
+        width:280,
+        height:50,
+        backgroundColor:"#32B768",
+        left:65,
+        alignItems:"center",
+        justifyContent:"center",
+        borderRadius:16,
+    },
+    buttonGreenText: {
+        fontWeight:"400",
     }
     
 })

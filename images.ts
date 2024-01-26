@@ -10,4 +10,5 @@ export const images:any = {
     zamioculca:require("./src/images/zamioculca.png"),
     Arrow:require("./src/images/Arrow.png"),
     emoji:require("./src/images/emoji.png"),
+    relogio:require("./src/images/relogio.png"),
 }
