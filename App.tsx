@@ -5,6 +5,7 @@ import Home from './src/screens/Home';
 import EscolhaPlanta from './src/screens/EscolhaPlanta';
 import Peperomia from './src/screens/DescriçõesDasPlantas/Peperomia';
 import TudoCerto from './src/screens/TudoCerto';
+import MinhasPlantinhas from './src/screens/MinhasPlantinhas';
 
 const Stack = createNativeStackNavigator()
 
@@ -16,6 +17,7 @@ export default function App() {
         <Stack.Screen name="EscolhaPlanta"component={EscolhaPlanta}/>
         <Stack.Screen name="Peperomia"component={Peperomia}/>
         <Stack.Screen name="TudoCerto"component={TudoCerto}/>
+        <Stack.Screen name="MinhasPlantinhas"component={MinhasPlantinhas}/>
       </Stack.Navigator>
     </NavigationContainer>
   )

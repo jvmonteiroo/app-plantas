@@ -15,7 +15,7 @@ export default function TudoCerto() {
             <Text style={styles.textFique}>
             Fique tranquilo que sempre vamos {"\n"} lembrar você de cuidar da sua plantinha {"\n"} com bastante amor.
             </Text>
-            <TouchableOpacity style={styles.buttonGreen}>
+            <TouchableOpacity style={styles.buttonGreen} onPress={() => navigation.navigate("MinhasPlantinhas")}>
                 <Text style={styles.buttonText}>
                     Muito obrigado :D
                 </Text>
