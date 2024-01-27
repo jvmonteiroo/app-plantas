@@ -11,4 +11,5 @@ export const images:any = {
     Arrow:require("./src/images/Arrow.png"),
     emoji:require("./src/images/emoji.png"),
     relogio:require("./src/images/relogio.png"),
+    emojitudocerto:require("./src/images/emojitudocerto.png"),
 }

@@ -43,7 +43,7 @@ export default function Peperomia() {
                 </Text>
                 <Image source={images.relogio}/>
             </View>
-            <TouchableOpacity style={styles.buttonGreen}>
+            <TouchableOpacity style={styles.buttonGreen} onPress={() => navigation.navigate("TudoCerto")}>
                 <Text style={styles.buttonGreenText}>
                     Cadastrar Planta
                 </Text>
