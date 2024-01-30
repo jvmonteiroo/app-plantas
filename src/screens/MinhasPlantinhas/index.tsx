@@ -173,13 +173,16 @@ export default function MinhasPlantinhas() {
         height:80,
         flexDirection:"row",
         justifyContent:"space-between",
-        padding:10
+        padding:10,
+        alignItems:"center",
+        
     },
     textPlantas:{
-        right:100,
+        flex:1,
     },
     planta: {
         width:40,
         height:48,
+        marginRight:10,
     },
 });

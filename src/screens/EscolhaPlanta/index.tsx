@@ -1,44 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
-import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View, FlatList } from 'react-native';
+import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View, FlatList, Alert } from 'react-native';
 import { images } from '../../../images';
 import { useNavigation } from '@react-navigation/native';
+import { useEffect, useState } from 'react';
 
 type ItemProps={
   image:string,
   name:string,
 }
 
-export default function EscolhaPlanta() {
+type PlaceItemProps={
+  name:string
+}
 
+export default function EscolhaPlanta() {
+  
   const navigation = useNavigation<any>()
 
-  const plantas = [
-    {
-      name: "Imbé",
-      image:"imbe",
-    },
-    {
-      name: "Peperomia",
-      image: "peperomia",
-    },
-    {
-      name: "Aningapara",
-      image: "aningapara",
-    },
-    {
-      name: "Yucca",
-      image:"yucca",
-    },
-    {
-      name: "Espada de São Jorge",
-      image: "espada",
-    },
-    {
-      name: "Zamioculca",
-      image: "zamioculca",
-    },
-    
-  ]
+  const [plantTypes, setPlantTypes] = useState([])
+  const [plantPlaces, setPlantPlaces] = useState<string[]>([])
+  
   const Item = ({name, image}: ItemProps) => (
     <TouchableOpacity style={styles.boxPlanta} onPress={() => navigation.navigate("Peperomia", {name, image})}>
       <Image source={images[image]} style={styles.planta} resizeMode='contain' resizeMethod='resize'/>
@@ -47,6 +28,50 @@ export default function EscolhaPlanta() {
       </Text>
     </TouchableOpacity>
   )
+
+  const PlaceItem = ({name}:PlaceItemProps) => (
+    <View style={styles.sala} key={name}>
+      <Text>
+        {name}
+      </Text>
+    </View>
+  )
+
+  
+  const getPlantTypes = () => {
+    fetch(
+      "http://192.168.0.119:3000/plant-types",
+      {
+        method: "GET",
+      }
+    ).then((response) => response.json())
+    .then(data => {
+      setPlantTypes(data)
+    })
+  }
+
+  const getPlaces = () => {
+    fetch(
+      "http://192.168.0.119:3000/plant-places",
+      {
+        method: "GET",
+      }
+    ).then((response) => response.json())
+    .then(data => {
+      const places = data.map((item: any) => (
+        <PlaceItem name={item} />
+      ))
+      setPlantPlaces(places)
+    }
+    )
+  }
+
+  useEffect(() => {
+    getPlantTypes()
+    getPlaces()
+  },[])
+
+  
 
   return (
     <View style={styles.container}>
@@ -73,35 +98,11 @@ export default function EscolhaPlanta() {
           </Text>
         </View>
         <ScrollView style={styles.comodos} horizontal={true}>
-          <View style={styles.sala}>
-            <Text>
-              Sala
-            </Text>
-          </View>
-          <View style={styles.sala}>
-            <Text>
-              Quarto
-            </Text>
-          </View>
-          <View style={styles.sala}>
-            <Text>
-              Cozinha
-            </Text>
-          </View>
-          <View style={styles.sala}>
-            <Text>
-              Banheiro
-            </Text>
-          </View>
-          <View style={styles.sala}>
-            <Text>
-              Sala
-            </Text>
-          </View>
+          {plantPlaces}
         </ScrollView>
         <FlatList 
           style={styles.plantas} 
-          data={plantas} 
+          data={plantTypes} 
           renderItem={({item}:any) => <Item name={item.name} image={item.image}/>}
           numColumns={2}
           horizontal={false}
